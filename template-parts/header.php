@@ -30,6 +30,10 @@ $header_nav_menu = wp_nav_menu( [
 					<?php echo esc_html( $site_name ); ?>
 				</a>
 			</h1>
+			<div class="search-form-wrapper">
+				<?php get_search_form(); ?>
+				
+			</div>
 			<p class="site-description">
 				<?php
 				if ( $tagline ) {

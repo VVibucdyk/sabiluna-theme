@@ -35,6 +35,21 @@ function hello_elementor_child_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'hello_elementor_child_scripts_styles', 20 );
 
+function theme_setup() {
+    register_nav_menus( [
+        'primary' => __( 'Primary Menu', 'your-theme-textdomain' ),
+    ] );
+}
+add_action( 'after_setup_theme', 'theme_setup' );
+
+function child_theme_setup() {
+    add_theme_support( 'custom-logo', [
+        'flex-height' => true,
+        'flex-width'  => true,
+    ] );
+}
+add_action( 'after_setup_theme', 'child_theme_setup' );
+
 function sabiluna_theme_styles() {
 	wp_enqueue_style(
 		'sabiluna-theme-style',
